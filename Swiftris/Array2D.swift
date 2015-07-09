@@ -26,6 +26,11 @@ class Array2D<T> {
         self.array = Array<T?>(count: rows * columns, repeatedValue: nil)
     }
     
+    /*
+     * subscript: In this case, allows us to do:
+     * a = Array2D(lines, columns)
+     * c = a[l, c]
+     */
     subscript(column: Int, row: Int) -> T? {
         get {
             return array[(row * columns) + column]
