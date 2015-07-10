@@ -15,6 +15,7 @@
 		7EBCD5661B4FE3A400346919 /* JShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCD5651B4FE3A400346919 /* JShape.swift */; };
 		7EBCD5681B4FE41600346919 /* SShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCD5671B4FE41600346919 /* SShape.swift */; };
 		7EBCD56A1B4FE43400346919 /* ZShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBCD5691B4FE43400346919 /* ZShape.swift */; };
+		7EC984F81B501A6E00BFC07C /* Swiftris.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC984F71B501A6E00BFC07C /* Swiftris.swift */; };
 		7ED748541B4DBAA400D2E7AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED748531B4DBAA400D2E7AA /* AppDelegate.swift */; };
 		7ED748581B4DBAA400D2E7AA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED748571B4DBAA400D2E7AA /* GameScene.swift */; };
 		7ED7485A1B4DBAA400D2E7AA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED748591B4DBAA400D2E7AA /* GameViewController.swift */; };
@@ -57,6 +58,7 @@
 		7EBCD5651B4FE3A400346919 /* JShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JShape.swift; sourceTree = "<group>"; };
 		7EBCD5671B4FE41600346919 /* SShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SShape.swift; sourceTree = "<group>"; };
 		7EBCD5691B4FE43400346919 /* ZShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZShape.swift; sourceTree = "<group>"; };
+		7EC984F71B501A6E00BFC07C /* Swiftris.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swiftris.swift; sourceTree = "<group>"; };
 		7ED7484E1B4DBAA400D2E7AA /* Swiftris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED748521B4DBAA400D2E7AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ED748531B4DBAA400D2E7AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				7EBCD5651B4FE3A400346919 /* JShape.swift */,
 				7EBCD5671B4FE41600346919 /* SShape.swift */,
 				7EBCD5691B4FE43400346919 /* ZShape.swift */,
+				7EC984F71B501A6E00BFC07C /* Swiftris.swift */,
 			);
 			path = Swiftris;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7E552BD51B4F27A000959E2E /* SquareShape.swift in Sources */,
 				7ED748581B4DBAA400D2E7AA /* GameScene.swift in Sources */,
 				7EBCD5661B4FE3A400346919 /* JShape.swift in Sources */,
+				7EC984F81B501A6E00BFC07C /* Swiftris.swift in Sources */,
 				7E552BD31B4F19F200959E2E /* Shape.swift in Sources */,
 				7ED748911B4DC2F100D2E7AA /* Array2D.swift in Sources */,
 				7E552BD91B4F30BF00959E2E /* LineShape.swift in Sources */,
