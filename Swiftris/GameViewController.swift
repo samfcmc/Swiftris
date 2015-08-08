@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, SwiftrisDelegate {
     
     /*
      * scene is a variable of type GameScene.
@@ -36,22 +36,57 @@ class GameViewController: UIViewController {
         scene.tick = didTick
         
         swiftris = Swiftris()
+        swiftris.delegate = self
         swiftris.beginGame()
         // Present
         skView.presentScene(scene)
         
-        scene.addPreviewShapeToScene(swiftris.nextShape!) {
-            self.swiftris.nextShape?.moveTo(StartingColumn, row: StartingRow)
-            self.scene.movePreviewShape(self.swiftris.nextShape!) {
-                let nextShapes = self.swiftris.newShape()
-                self.scene.startTicking()
-                self.scene.addPreviewShapeToScene(nextShapes.nextShape!) {}
-            }
-        }
     }
     
     func didTick() {
-        swiftris.fallingShape?.lowerShapeByOneRow()
+        swiftris.letShapeFall()
+    }
+    
+    func nextShape() {
+        let newShapes = swiftris.newShape()
+        if let fallingShape = newShapes.fallingShape {
+            self.scene.addPreviewShapeToScene(newShapes.nextShape!, completion: {})
+            self.scene.movePreviewShape(fallingShape, completion: {
+                self.view.userInteractionEnabled = true
+                self.scene.startTicking()
+            })
+        }
+    }
+    
+    func gameDidBegin(swiftris: Swiftris) {
+        if swiftris.nextShape != nil && swiftris.nextShape!.blocks[0].sprite == nil {
+            scene.addPreviewShapeToScene(swiftris.nextShape!, completion: {
+                self.nextShape()
+            })
+        } else {
+            nextShape()
+        }
+    }
+    
+    func gameDidEnt(swiftris: Swiftris) {
+        view.userInteractionEnabled = false
+        scene.stopTicking()
+    }
+    
+    func gameDidLevelUp(swiftris: Swiftris) {
+        // Nothing to do...
+    }
+    
+    func gameShapeDidDrop(swiftris: Swiftris) {
+        // Nothing to do...
+    }
+    
+    func gameShapeDidLand(swiftris: Swiftris) {
+        scene.stopTicking()
+        nextShape()
+    }
+    
+    func gameShapeDidMove(swiftris: Swiftris) {
         scene.redrawShape(swiftris.fallingShape!, completion: {})
     }
     

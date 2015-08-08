@@ -133,6 +133,8 @@ class Shape: Hashable, Printable {
     }
     
     final func shiftBy(columns: Int, rows: Int){
+        self.column += columns
+        self.row += rows
         for block in blocks {
             self.column += columns
             self.row += rows
@@ -162,6 +164,32 @@ class Shape: Hashable, Printable {
         default:
             return ZShape(column:startingColumn, row:startingRow)
         }
+    }
+    
+    final func rotate(clockwise: Bool) {
+        let newOrientation = Orientation.rotate(orientation, clockwise: clockwise)
+        rotateBlocks(newOrientation)
+        orientation = newOrientation
+    }
+    
+    final func rotateClockwise() {
+        self.rotate(true)
+    }
+    
+    final func roateCounterClockwise() {
+        self.rotate(false)
+    }
+    
+    final func raiseShapeByOneRow() {
+        shiftBy(0, rows: -1)
+    }
+    
+    final func shiftRightByOneColumn() {
+        shiftBy(1, rows: 0)
+    }
+    
+    final func shiftLeftByOneColumn() {
+        shiftBy(-1, rows: 0)
     }
 }
 
